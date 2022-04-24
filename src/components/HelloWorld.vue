@@ -10,7 +10,8 @@ defineProps<{
     <h2>
       You’ve successfully created a project with
       <a target="_blank" href="https://vitejs.dev/">Vite</a> +
-      <a target="_blank" href="https://vuejs.org/">Vue 3</a>. What's next?
+      <a target="_blank" href="https://vuejs.org/">Vue 3</a> +
+      <a target="_blank" href="https://vite-plugin-pwa.netlify.app/">Vue Plugin PWA</a>. What's next?
     </h2>
   </div>
 </template>
