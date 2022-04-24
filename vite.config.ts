@@ -11,7 +11,7 @@ export default defineConfig({
     vue(),
     VitePWA({
       mode: "development",
-      base: "/",
+      base: "/protofish-front/",
       srcDir: "src",
       filename: "service-worker.ts",
       includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
