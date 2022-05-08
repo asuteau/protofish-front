@@ -1,8 +1,8 @@
-import { fileURLToPath, URL } from 'url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import vuetify from '@vuetify/vite-plugin'
 import { VitePWA } from "vite-plugin-pwa"
+import { fileURLToPath, URL } from 'url'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -13,6 +13,10 @@ export default defineConfig(({ mode }) => {
     base: isDev ? "" : "/protofish-front/",
     plugins: [
       vue(),
+      // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
+      vuetify({
+        autoImport: true,
+      }),
       VitePWA({
         mode: "development",
         base: isDev ? "" : "/protofish-front/",
@@ -46,10 +50,24 @@ export default defineConfig(({ mode }) => {
         }
       })
     ],
+    define: { 'process.env': {} },
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
-    }
+    },
+    /* remove the need to specify .vue files https://vitejs.dev/config/#resolve-extensions
+    resolve: {
+      extensions: [
+        '.js',
+        '.json',
+        '.jsx',
+        '.mjs',
+        '.ts',
+        '.tsx',
+        '.vue',
+      ]
+    },
+    */
   }
 })
