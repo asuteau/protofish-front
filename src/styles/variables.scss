@@ -1,2 +1,5 @@
-@use "vuetify/styles" with ($body-font-family: "Poppins"
+@use "vuetify/styles" with (
+  $body-font-family: "Poppins",
+  $border-radius-root: 24px,
+  $font-size-root: 14px
 );

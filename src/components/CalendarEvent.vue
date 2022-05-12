@@ -3,7 +3,10 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    event: Object
+    event: {
+      type: Object,
+      default: () => ({})
+    }
   },
   data() {
     return {
@@ -17,7 +20,10 @@ export default defineComponent({
   <div class="card">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img :src="event?.urlpic" alt="Placeholder image">
+        <img
+          :src="event?.urlpic"
+          alt="Placeholder image"
+        >
       </figure>
     </div>
     <div class="card-content">

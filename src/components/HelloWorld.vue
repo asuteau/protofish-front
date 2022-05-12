@@ -2,15 +2,35 @@
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
-        <v-img :src="logo" class="my-3" contain height="200" />
-        <v-btn class="ma-2" color="primary" flat>
-          Accept
-          <v-icon end icon="fas fa-lock"></v-icon>
+        <v-img
+          :src="logo"
+          class="my-3"
+          contain
+          height="200"
+        />
+        <v-btn
+          class="ma-2"
+          color="primary"
+          flat
+        >
+          <v-icon
+            start
+            icon="$prev"
+          />
+          Previous
         </v-btn>
 
-        <v-btn class="ma-2" flat>
-          <v-icon start icon="fas fa-fish"></v-icon>
-          Cancel
+        <v-btn
+          class="ma-2"
+          flat
+          variant="outlined"
+          color="primary"
+        >
+          Next
+          <v-icon
+            end
+            icon="$next"
+          />
         </v-btn>
       </v-col>
 
@@ -24,41 +44,71 @@
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
           <br>please join our online
-          <a href="https://community.vuetifyjs.com" target="_blank">Discord Community</a>
+          <a
+            href="https://community.vuetifyjs.com"
+            target="_blank"
+          >Discord Community</a>
         </p>
       </v-col>
 
-      <v-col class="mb-5" cols="12">
+      <v-col
+        class="mb-5"
+        cols="12"
+      >
         <h2 class="headline font-weight-bold mb-5">
           What's next?
         </h2>
 
         <v-row justify="center">
-          <a v-for="(next, i) in whatsNext" :key="i" :href="next.href" class="subheading mx-3" target="_blank">
+          <a
+            v-for="(next, i) in whatsNext"
+            :key="i"
+            :href="next.href"
+            class="subheading mx-3"
+            target="_blank"
+          >
             {{ next.text }}
           </a>
         </v-row>
       </v-col>
 
-      <v-col class="mb-5" cols="12">
+      <v-col
+        class="mb-5"
+        cols="12"
+      >
         <h2 class="headline font-weight-bold mb-5">
           Important Links
         </h2>
 
         <v-row justify="center">
-          <a v-for="(link, i) in importantLinks" :key="i" :href="link.href" class="subheading mx-3" target="_blank">
+          <a
+            v-for="(link, i) in importantLinks"
+            :key="i"
+            :href="link.href"
+            class="subheading mx-3"
+            target="_blank"
+          >
             {{ link.text }}
           </a>
         </v-row>
       </v-col>
 
-      <v-col class="mb-5" cols="12">
+      <v-col
+        class="mb-5"
+        cols="12"
+      >
         <h2 class="headline font-weight-bold mb-5">
           Ecosystem
         </h2>
 
         <v-row justify="center">
-          <a v-for="(eco, i) in ecosystem" :key="i" :href="eco.href" class="subheading mx-3" target="_blank">
+          <a
+            v-for="(eco, i) in ecosystem"
+            :key="i"
+            :href="eco.href"
+            class="subheading mx-3"
+            target="_blank"
+          >
             {{ eco.text }}
           </a>
         </v-row>

@@ -4,10 +4,15 @@ import { defineComponent } from 'vue'
 import CalendarEvent from './CalendarEvent.vue'
 
 export default defineComponent({
+  components: { CalendarEvent },
   data() {
     return {
       events: [] as FishingEvent[]
     };
+  },
+  created() {
+    // fetch on init
+    this.getEvents()
   },
   methods: {
     async getEvents() {
@@ -24,18 +29,17 @@ export default defineComponent({
       }
       this.events = events
     }
-  },
-  created() {
-    // fetch on init
-    this.getEvents()
-  },
-  components: { CalendarEvent }
+  }
 })
 </script>
 
 <template>
   <div class="columns is-multiline">
-    <div class="column is-one-third" v-for="event in events" :key="event.nom">
+    <div
+      v-for="event in events"
+      :key="event.nom"
+      class="column is-one-third"
+    >
       <CalendarEvent :event="event" />
     </div>
   </div>
