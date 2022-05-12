@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/protofish-front/service-worker.js', { scope: '/protofish-front/' })})}
