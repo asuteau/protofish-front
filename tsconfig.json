@@ -5,6 +5,7 @@
     "src/**/*",
     "src/**/*.vue"
   ],
+  "lib": ["ESNext", "DOM", "WebWorker"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

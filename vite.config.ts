@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
   const isDev = mode === 'development'
   return {
     // build specific config
-    base: isDev ? "" : "/protofish-front/",
+    base: isDev ? "/" : "/protofish-front/",
     plugins: [
       vue(),
       // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
@@ -19,8 +19,7 @@ export default defineConfig(({ mode }) => {
         styles: 'expose'
       }),
       VitePWA({
-        mode: "development",
-        base: isDev ? "" : "/protofish-front/",
+        base: isDev ? "/" : "/protofish-front/",
         srcDir: "src",
         filename: "service-worker.ts",
         includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
@@ -51,24 +50,10 @@ export default defineConfig(({ mode }) => {
         }
       })
     ],
-    define: { 'process.env': {} },
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
-    },
-    /* remove the need to specify .vue files https://vitejs.dev/config/#resolve-extensions
-    resolve: {
-      extensions: [
-        '.js',
-        '.json',
-        '.jsx',
-        '.mjs',
-        '.ts',
-        '.tsx',
-        '.vue',
-      ]
-    },
-    */
+    }
   }
 })
