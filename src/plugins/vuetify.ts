@@ -1,6 +1,6 @@
 // Styles
 import '@fortawesome/fontawesome-free/css/all.css'
-import 'vuetify/styles'
+import '@/styles/variables.scss'
 
 // Vuetify
 import { createVuetify } from 'vuetify'

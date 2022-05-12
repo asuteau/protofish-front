@@ -3,14 +3,14 @@
     <v-row class="text-center">
       <v-col cols="12">
         <v-img :src="logo" class="my-3" contain height="200" />
-        <v-btn class="ma-2" color="primary">
+        <v-btn class="ma-2" color="primary" flat>
           Accept
           <v-icon end icon="fas fa-lock"></v-icon>
         </v-btn>
 
-        <v-btn class="ma-2" color="red">
-          Decline
-          <v-icon end icon="fas fa-fish"></v-icon>
+        <v-btn class="ma-2" flat>
+          <v-icon start icon="fas fa-fish"></v-icon>
+          Cancel
         </v-btn>
       </v-col>
 

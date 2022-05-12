@@ -16,6 +16,7 @@ export default defineConfig(({ mode }) => {
       // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
       vuetify({
         autoImport: true,
+        styles: 'expose'
       }),
       VitePWA({
         mode: "development",
