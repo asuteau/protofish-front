@@ -4,7 +4,7 @@
       v-for="event in events"
       :key="event.nom"
       cols="12"
-      md="4"
+      md="3"
     >
       <calendar-event :event="event" />
     </v-col>
@@ -19,7 +19,8 @@ export default defineComponent({
   components: { CalendarEvent },
   data() {
     return {
-      events: [] as FishingEvent[]
+      events: [] as FishingEvent[],
+      isActive: false
     };
   },
   created() {
@@ -34,10 +35,7 @@ export default defineComponent({
         events = response.data.sort((a: FishingEvent, b: FishingEvent) => {
           return a.startdate > b.startdate ? 1 : -1
         });
-        response = await this.axios.get(`https://picsum.photos/v2/list?page=2&limit=${events.length}`)
-        events.map(e => e).forEach((e, index) => {
-          e.urlpic = response.data[index].download_url
-        })
+        response = await this.axios.get('https://picsum.photos/seed/picsum/200/300')
       } catch (error) {
         console.error('An error occured', error)
       }

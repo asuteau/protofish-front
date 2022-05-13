@@ -13,6 +13,7 @@ export default interface FishingEvent {
   nombremanche: number,
   nombreplace?: number,
   urlpic?: string,
+  afficheurl?: string,
   typecompetition?: string,
   estouvert: boolean,
   idmedia?: string

@@ -1,13 +1,12 @@
 <template>
   <v-card 
     class="mx-auto"
-    max-width="400"
     flat
-    rounded="24"
+    rounded="lg"
   >
     <v-img
-      :src="event.urlpic"
-      class="white--text align-end"
+      :src="eventImage"
+      class="white--text align-end rounded-t-lg"
       gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
       height="200px"
       cover
@@ -50,6 +49,9 @@ export default defineComponent({
   computed: {
     eventDate(): string {
       return toLocaleString(this.event.startdate)
+    },
+    eventImage(): string {
+      return this.event.afficheurl || 'https://picsum.photos/200/300?random=1'
     }
   }
 })
