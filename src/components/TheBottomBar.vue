@@ -1,7 +1,9 @@
 <template>
   <v-bottom-navigation
     v-model="activeMenuItem"
+    bg-color="grey-lighten-5"
     color="primary"
+    elevation="2"
   >
     <v-btn
       v-for="item in menuItems"
@@ -25,10 +27,9 @@ export default defineComponent({
   data() {
     return {
       menuItems: [
-        { id: 'toto', label: "Calendrier", route: "Calendar", icon: "fas fa-calendar-days" },
-        { id: 'titi', label: "Palmarès", route: "Ranking", icon: "fas fa-ranking-star" },
-        { id: 'tata', label: "Statistiques", route: "Statistics", icon: "fas fa-chart-pie" },
-        { id: 'tuto', label: "Profil", route: "Profile", icon: "fas fa-user" }
+        { id: 'toto', label: "Calendrier", route: "Calendar", icon: "far fa-calendar" },
+        { id: 'titi', label: "Palmarès", route: "Ranking", icon: "far fa-star" },
+        { id: 'tata', label: "Statistiques", route: "Statistics", icon: "far fa-chart-bar" }
       ],
       activeMenuItem: ''
     }

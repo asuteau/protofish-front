@@ -9,7 +9,7 @@ import { aliases, fa } from 'vuetify/iconsets/fa'
 const protofishTheme = {
   dark: false,
   colors: {
-    background: '#FFFFFF',
+    background: '#EEEEEE',
     surface: '#FFFFFF',
     primary: '#006E7F',
     secondary: '#F8CB2E',
@@ -32,6 +32,11 @@ export default createVuetify(
     },
     theme: {
       defaultTheme: 'protofishTheme',
+      variations: {
+        colors: ['primary', 'secondary'],
+        lighten: 2,
+        darken: 2,
+      },
       themes: {
         protofishTheme,
       }
