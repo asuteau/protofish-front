@@ -4,13 +4,15 @@
     bg-color="grey-lighten-5"
     color="primary"
     elevation="2"
+    density="comfortable"
   >
     <v-btn
       v-for="item in menuItems"
       :key="item.id"
       :value="item.id"
+      width="100"
     >
-      <v-icon>
+      <v-icon size="large">
         {{ item.icon }}
       </v-icon>
       <span
@@ -22,23 +24,26 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import type MenuItem from '@/types/MenuItem'
 
 export default defineComponent({
+  props: {
+    menuItems: {
+      type: Array as PropType<Array<MenuItem>>,
+      default: () => ([])
+    }
+  },
   data() {
     return {
-      menuItems: [
-        { id: 'toto', label: "Calendrier", route: "Calendar", icon: "far fa-calendar" },
-        { id: 'titi', label: "Palmarès", route: "Ranking", icon: "far fa-star" },
-        { id: 'tata', label: "Statistiques", route: "Statistics", icon: "far fa-chart-bar" }
-      ],
       activeMenuItem: ''
     }
   },
-  created() {
-    this.activeMenuItem = this.menuItems[0].id
+  mounted() {
+    this.activeMenuItem = this.menuItems.length ? this.menuItems[0].id : ''
   },
   methods: {
-    isActive(item: any): boolean {
+    isActive(item: MenuItem): boolean {
       return item.id === this.activeMenuItem
     }
   }
