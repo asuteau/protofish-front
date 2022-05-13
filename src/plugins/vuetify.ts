@@ -11,8 +11,8 @@ const protofishTheme = {
   colors: {
     background: '#FFFFFF',
     surface: '#FFFFFF',
-    primary: '#2D4059',
-    secondary: '#EA5455',
+    primary: '#006E7F',
+    secondary: '#F8CB2E',
     error: '#B00020',
     info: '#2196F3',
     success: '#4CAF50',
