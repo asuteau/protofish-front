@@ -1,12 +1,9 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      v-if="!isMobile"
-      color="grey-darken-1"
-      elevation="2"
-      permanent
+    <the-top-bar
+      :is-mobile="isMobile"
+      :menu-items="menuItems"
     />
-    <the-top-bar />
     <the-bottom-bar 
       v-if="isMobile"
       :menu-items="menuItems"

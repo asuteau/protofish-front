@@ -1,4 +1,24 @@
 <template>
+  <v-navigation-drawer
+    v-model="drawer"
+    color="grey-lighten-5"
+    elevation="2"
+  >
+    <v-list
+      density="compact"
+      nav
+    >
+      <v-list-item
+        v-for="item in menuItems"
+        :key="item.id"
+        :value="item.id"
+        :prepend-icon="item.icon"
+        :title="item.label"
+        color="primary"
+      />
+    </v-list>
+  </v-navigation-drawer>
+  
   <v-app-bar
     color="primary-darken-2"
     elevation="2"
@@ -10,8 +30,19 @@
       />
     </template>
 
-    <template #prepend>
-      <v-app-bar-nav-icon />
+    <template
+      #prepend
+    >
+      <v-app-bar-nav-icon 
+        v-if="!isMobile"
+        @click.stop="drawer = !drawer"
+      />
+
+      <v-icon
+        v-else
+      >
+        fas fa-fish
+      </v-icon>
     </template>
 
     <v-app-bar-title>Protofish</v-app-bar-title>
@@ -23,7 +54,7 @@
     </v-btn>
 
     <v-btn icon>
-      <v-icon>fas fa-user</v-icon>
+      <v-icon>fas fa-user-circle</v-icon>
     </v-btn>
   </v-app-bar>
 </template>
@@ -37,7 +68,16 @@ export default defineComponent({
     menuItems: {
       type: Array as PropType<Array<MenuItem>>,
       default: () => ([])
+    },
+    isMobile: {
+      type: Boolean,
+      default: false
     }
   },
+  data() {
+    return {
+      drawer: false
+    }
+  }
 })
 </script>
