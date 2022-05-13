@@ -1,5 +1,6 @@
 <template>
   <v-navigation-drawer
+    v-if="!isMobile"
     v-model="drawer"
     color="grey-lighten-5"
     elevation="2"
@@ -33,7 +34,7 @@
     <template
       #prepend
     >
-      <v-app-bar-nav-icon 
+      <v-app-bar-nav-icon
         v-if="!isMobile"
         @click.stop="drawer = !drawer"
       />
