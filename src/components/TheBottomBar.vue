@@ -7,17 +7,18 @@
     density="comfortable"
   >
     <v-btn
-      v-for="item in menuItems"
-      :key="item.id"
-      :value="item.id"
+      v-for="menuItem in menuItems"
+      :key="menuItem.id"
+      :value="menuItem.id"
       width="100"
+      :to="{ name: menuItem.route }"
     >
       <v-icon size="large">
-        {{ item.icon }}
+        {{ menuItem.icon }}
       </v-icon>
       <span
-        :class="{ inactive: !isActive(item), 'mt-1': isActive(item) }"
-      >{{ item.label }}</span>
+        :class="{ inactive: !isActive(menuItem), 'mt-1': isActive(menuItem) }"
+      >{{ menuItem.label }}</span>
     </v-btn>
   </v-bottom-navigation>
 </template>

@@ -9,8 +9,10 @@
       :menu-items="menuItems"
     />
     <v-main>
-      <reload-prompt />
-      <!-- <router-view /> -->
+      <v-container fluid>
+        <reload-prompt />
+        <router-view />
+      </v-container>
     </v-main>
   </v-app>
 </template>
@@ -28,9 +30,9 @@ export default defineComponent({
   data() {
     return {
       menuItems: [
-        { id: 'toto', label: "Calendrier", route: "Calendar", icon: "far fa-calendar" },
-        { id: 'titi', label: "Palmarès", route: "Ranking", icon: "far fa-star" },
-        { id: 'tata', label: "Statistiques", route: "Statistics", icon: "far fa-chart-bar" }
+        { id: 'calendar', label: "Calendrier", route: "calendar", icon: "far fa-calendar" },
+        { id: 'rankings', label: "Palmarès", route: "rankings", icon: "far fa-star" },
+        { id: 'statistics', label: "Statistiques", route: "statistics", icon: "far fa-chart-bar" }
       ] as MenuItem[]
     };
   },
